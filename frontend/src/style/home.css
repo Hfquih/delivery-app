@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+
+
+:root {
+  /* COLORS  */
+  /* primary */
+  --primary-0: #f0efff;
+  --primary-50: #d8d6ff;
+  --primary-100: #c1beff;
+  --primary-200: #aaa5ff;
+  --primary-300: #938dff;
+  --primary-400: #7b74ff;
+  /* main */
+  --primary-500: #645cff;
+  --primary-600: #554ed9;
+  --primary-700: #4640b3;
+  --primary-800: #37338c;
+  --primary-900: #282566;
+  --primary-1000: #191740;
+  --primary-1100: #0a0919;
+  --primary-1200: #2a6bef;
+  --primary-dark: #1f56c9;
+  --primary-light: #afbdd2;
+  /* grey */
+  --grey-0: #fafbfc;
+  --grey-50: #f2f4f8;
+  --grey-100: #eaedf3;
+  --grey-200: #e2e7ef;
+  --grey-300: #dbe0ea;
+  --grey-400: #d3dae6;
+  --grey-500: #cbd3e1;
+  --grey-600: #adb3bf;
+  --grey-700: #8e949e;
+  --grey-800: #70747c;
+  --grey-900: #51545a;
+  --grey-1000: #333538;
+  --grey-1100: #141516;
+
+  /* rest */
+  --black: #222;
+  --white: #fff;
+  --red-light: #f8d7da;
+  --red-dark: #842029;
+  --green-light: #d1e7dd;
+  --green-dark: #0f5132;
+
+  /* typography */
+  --headingFont: 'Inconsolata', monospace;
+  --bodyFont: 'Montserrat', sans-serif;
+  --smallText: 0.7em;
+  /* rest */
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-1000);
+  --borderRadius: 0.25rem;
+  --letterSpacing: 1px;
+  --transition: 0.3s ease-in-out all;
+  --max-width: 1120px;
+  --fixed-width: 600px;
+  /* box shadows */
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* begin header */
+
+.header{
+    padding: 20px;
+    background-color: #1f56c9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-link{
+    max-width: 100%;
+    width: 600px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--black);
+    font-size: 0.9rem;
+    font-family: var(--bodyFont);
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+
+.logo-img{
+    width: 200px;
+}
+
+.header-register{
+    max-width: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login-link{
+  width: 110px;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  font-family: var(--bodyFont);
+}
+
+.sign-link{
+  width: 120px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+  font-size: 0.9rem;
+  font-family: var(--bodyFont);
+  
+}
+
+/* end header */
+
+
+/*begin background header */
+
+.backgound-header{
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  position: relative;
+}
+
+.backgound-header img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  object-fit: fill;
+}
+
+.backgound-header-title{
+  position: relative;
+  width: 320px;
+  top: 20%;
+  left: 5%;
+
+}
+
+.backgound-header-title p{
+  font-size: 1rem;
+  font-family: var(--bodyFont);
+  margin-bottom: 20px;
+}
+
+.driver-customer-btn{
+  width: 370px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.req-delivery{
+  width: 180px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: #1f56c9;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px black;
+  transition: transform 0.3s ease;
+}
+
+.drive-delivery{
+  width: 180px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #1f56c9;
+  border: 2px solid #1f56c9;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px black;
+  transition: transform 0.3s ease;
+}
+
+.req-delivery:hover, 
+.drive-delivery:hover{
+  box-shadow: 0px 8px 14px black;
+  transform: translateY(-3px);
+}
+
+.backgound-header-flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+}
+
+.icon{
+  font-size: 1.5rem;
+  color: #1f56c9;
+  margin-bottom: 20px;
+}
+/*end background header */
+
+
+/* how its work begin */
+.how-work-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.how-work-width{
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+.how-work-width p{
+  font-family: var(--bodyFont);
+
+}
+
+.how-work-container-flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.how-work-container-flex-content{
+  position: relative;
+  width: 300px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+  padding: 20px;
+}
+
+.absolute-num{
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  background-color: #1f56c9;
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.icon-how{
+  margin: 10px 0;
+  font-size: 1.5rem;
+  background-color: skyblue;
+  border-radius: 50%;
+  padding: 20px;
+  color: #1f56c9;
+}
+
+/*how its work end */
+
+
+
+/*deriver begin */
+
+.driver-container{
+  padding: 20px;
+}
+
+.driver-container-relative{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  max-width: 100%;
+}
+
+.driver-container-relative img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.driver-container-info-1{
+  width: 300px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+
+.driver-container-info-1 p{
+  margin-bottom: 10px;
+  font-family: var(--bodyFont);
+}
+
+.driver-btn{
+  width: 150px;
+  padding: 14px;
+  background-color: #1f56c9;
+  color: white;
+  font-family: var(--bodyFont);
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px black;
+  transition: transform 0.3s ease;
+}
+
+.driver-btn:hover{
+  box-shadow: 0px 8px 14px black;
+  transform: translateY(-3px);
+}
+/*driver end */
