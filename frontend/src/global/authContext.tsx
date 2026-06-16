@@ -1,12 +1,12 @@
 import React from 'react';
 
 type Auth ={
-    token:string,
+    token:string | null,
     login:(token:string)=>void,
     logout:()=>void
 }
 
-const AuthContext = React.createContext<Auth |null>(null);
+const AuthContext = React.createContext<Auth | null>(null);
 
 type AuthProvider = {
     children : React.ReactNode
