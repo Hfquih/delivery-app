@@ -1,10 +1,10 @@
 import 'dotenv/config'
 import 'express-async-errors'
 import express from 'express'
-import user from './router/user'
-import connectDb from './DB/connectDb'
-import {errorHandler} from './middleware/errorHandler'
-import notFound from './middleware/notFound'
+import user from './router/user.js'
+import connectDb from './DB/connectDb.js'
+import {errorHandler} from './middleware/errorHandler.js'
+import notFound from './middleware/notFound.js'
 
 
 

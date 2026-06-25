@@ -1,4 +1,4 @@
-import CustomAPIERROR from "./CustomError";
+import CustomAPIERROR from "./CustomError.js";
 import { StatusCodes } from "http-status-codes";
 
 

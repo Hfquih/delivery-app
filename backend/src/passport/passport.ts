@@ -1,6 +1,20 @@
 import {Strategy as jwtStrategy , StrategyOptions , VerifiedCallback} from 'passport-jwt'
 import { ExtractJwt } from 'passport-jwt'
-import NotFound from '../errors/NotFound'
+import NotFound from '../errors/NotFound.js'
+import { PrismaClient } from '../generated/prisma/client.js'
+import { PrismaPg } from '@prisma/adapter-pg'
+
+const databaseUrl = process.env.DATABASE_URL
+
+if (!databaseUrl) {
+  throw new Error('DATABASE_URL is missing')
+}
+
+const prisma = new PrismaClient({
+  adapter: new PrismaPg({
+    connectionString: databaseUrl
+  })
+})
 
 
 const publicKey =  process.env.JWT_PUBLIC_KEY
@@ -13,8 +27,8 @@ const PUB_KEY= publicKey.replace(/\\n/g, '\n');
 
 if(!process.env.JWT_PUBLIC_KEY){
     throw new NotFound(
-    'environment variables are missing'
-  );
+        'environment variables are missing'
+    );
 }
 
 const options : StrategyOptions={
@@ -24,15 +38,16 @@ const options : StrategyOptions={
 }
 
 interface JWTpayload {
-    id:string,
+    userId:number,
     firstname:string,
-    lastname:string
+    lastname:string,
+    role:string
 }
 
 export default (passport: typeof import("passport"))=>{
     passport.use(new jwtStrategy(options , async (payload:JWTpayload , done:VerifiedCallback)=>{
         try{
-            const users = await user.findOne({_id:payload.userId})
+            const users = await prisma.user.findUnique({where :{id:payload.userId}})
 
             if(users){
                 return done(null , users)

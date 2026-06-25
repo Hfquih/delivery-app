@@ -1,15 +1,17 @@
 import express from "express";
 const router = express.Router()
-import {getAllUsers , register , login, getUsers , updateUser , deleteUser} from '../controllers/user'
+import {getAllUsers , register , login, getUsers , updateUser , deleteUser} from '../controllers/user.js'
+import { requireAuth } from "../middleware/auth.js";
+import { authorization } from "../middleware/auth.js";
 
-
-router.get('/' , getAllUsers)
 
 router.post('/register' , register)
 
 router.post('/login' , login)
 
-router.get('/:id' , getUsers)
+router.get('/' , requireAuth , authorization('admin') , getAllUsers)
+
+router.get('/:id' , requireAuth , getUsers)
 
 router.patch('/:id' , updateUser)
 
